@@ -191,10 +191,6 @@
         }
     ],
     "outputs": {
-        "ParentDeploymentNameSuffix_omsDeployStorageAnalyticsOnly" : {
-            "type" : "string",
-            "value": "[reference('AnalyticsOnly').outputs.ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly]"
-        },
         "Output2" : {
             "type" : "string",
             "value": "output2"
