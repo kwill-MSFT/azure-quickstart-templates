@@ -392,8 +392,8 @@
         ]
     },
     "resources": [
+        /*
         {
-            /*
             "name": "[parameters('omsLogAnalyticsWorkspaceName')]",
             "type": "Microsoft.OperationalInsights/workspaces",
             "apiVersion": "2015-11-01-preview",
@@ -2427,8 +2427,8 @@
                     }
                 }
             }
-            */
         }
+         */
     ],
     "outputs": {
                     "ParentDeploymentNameSuffix" : {
