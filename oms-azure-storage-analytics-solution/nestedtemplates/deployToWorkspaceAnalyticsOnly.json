@@ -2431,9 +2431,13 @@
          */
     ],
     "outputs": {
-                    "ParentDeploymentNameSuffix" : {
+        "ParentDeploymentNameSuffix" : {
             "type" : "string",
             "value": "[concat(parameters('omsAutomationAccountName'), '/',variables('IngestScheduleGuid'))]"
+        },
+        "Output2" : {
+            "type" : "string",
+            "value": "output2"
         }
-        }
+    }
 }
