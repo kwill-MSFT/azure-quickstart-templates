@@ -2438,6 +2438,10 @@
         "Output3" : {
             "type" : "string",
             "value": "output3"
+        },
+        "DeploymentName_deployToWorkspaceAnalyticsOnly" : {
+            "type" : "string",
+            "value": "[deployment().name]"
         }
     }
 }
