@@ -2431,13 +2431,13 @@
          */
     ],
     "outputs": {
-        "ParentDeploymentNameSuffix" : {
+        "ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly" : {
             "type" : "string",
             "value": "[concat(parameters('omsAutomationAccountName'), '/',variables('IngestScheduleGuid'))]"
         },
-        "Output2" : {
+        "Output3" : {
             "type" : "string",
-            "value": "output2"
+            "value": "output3"
         }
     }
 }
