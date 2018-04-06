@@ -151,7 +151,7 @@
             "condition": "[equals(parameters('omsWorkspaceType'), 'Unlinked')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2016-02-01",
-            "name": "AnalyticsOnly",
+            "name": "[concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -193,7 +193,7 @@
     "outputs": {
         "ParentDeploymentNameSuffix_omsDeployStorageAnalyticsOnly": {
             "type": "object",
-            "value": "[reference('AnalyticsOnly').outputs.ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly]"
+            "value": "[reference(concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))).outputs.ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly]"
         },
         "Output2": {
             "type": "string",
