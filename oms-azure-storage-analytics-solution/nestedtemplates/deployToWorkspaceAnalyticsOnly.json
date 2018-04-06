@@ -2432,7 +2432,7 @@
     ],
     "outputs": {
         "ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly" : {
-            "type" : "string",
+            "type" : "object",
             "value": "[concat(parameters('omsAutomationAccountName'), '/',variables('IngestScheduleGuid'))]"
         },
         "Output3" : {
