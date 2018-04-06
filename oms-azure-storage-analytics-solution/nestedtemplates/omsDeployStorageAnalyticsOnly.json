@@ -236,5 +236,14 @@
             }
         }
     ],
-    "outputs": {}
+    "outputs": {
+        "ParentDeploymentNameSuffix" : {
+            "type" : "string",
+            "value": "[reference(concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))).outputs.ParentDeploymentNameSuffix]"
+        },
+        "Output2" : {
+            "type" : "string",
+            "value": "output2"
+        }
+    }
 }
