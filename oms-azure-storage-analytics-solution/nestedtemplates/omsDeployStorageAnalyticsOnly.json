@@ -148,56 +148,10 @@
     },
     "resources": [
         {
-            "condition": "[equals(parameters('omsWorkspaceType'), 'Linked')]",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2016-02-01",
-            "name": "[concat('LinkedWSAnalyticsOnly-',parameters('deploymentNameSuffix'))]",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('nestedTemplates').deployToLinkedWorkspaceAnalyticsOnly]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "deploymentNameSuffix": {
-                        "value": "[parameters('deploymentNameSuffix')]"
-                    },
-                    "omsLogAnalyticsWorkspaceName": {
-                        "value": "[parameters('omsLogAnalyticsWorkspaceName')]"
-                    },
-                    "omsLogAnalyticsRegion": {
-                        "value": "[parameters('omsLogAnalyticsRegion')]"
-                    },
-                    "omsLogAnalyticsSku": {
-                        "value": "[parameters('omsLogAnalyticsSku')]"
-                    },
-                    "omsAutomationAccountName": {
-                        "value": "[parameters('omsAutomationAccountName')]"
-                    },
-                    "omsAutomationRegion": {
-                        "value": "[parameters('omsAutomationRegion')]"
-                    },
-                    "linkedWorkspaceSKU": {
-                        "value": "[parameters('linkedWorkspaceSKU')]"
-                    },
-                    "collectAuditLogs": {
-                        "value": "[parameters('collectAuditLogs')]"
-                    },
-                    "collectionFromAllSubscriptions": {
-                        "value": "[parameters('collectionFromAllSubscriptions')]"
-                    },
-                    "_artifactsLocation": {
-                        "value": "[parameters('_artifactsLocation')]"
-                    }
-                }
-            }
-        },
-        {
             "condition": "[equals(parameters('omsWorkspaceType'), 'Unlinked')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2016-02-01",
-            "name": "[concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))]",
+            "name": "AnalyticsOnly",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -237,9 +191,9 @@
         }
     ],
     "outputs": {
-        "ParentDeploymentNameSuffix" : {
+        "ParentDeploymentNameSuffix_omsDeployStorageAnalyticsOnly" : {
             "type" : "string",
-            "value": "[reference(concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))).outputs.ParentDeploymentNameSuffix]"
+            "value": "[reference('AnalyticsOnly').outputs.ParentDeploymentNameSuffix_deployToWorkspaceAnalyticsOnly]"
         },
         "Output2" : {
             "type" : "string",
