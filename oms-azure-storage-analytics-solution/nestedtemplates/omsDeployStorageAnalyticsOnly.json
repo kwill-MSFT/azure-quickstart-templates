@@ -198,6 +198,14 @@
         "Output2": {
             "type": "string",
             "value": "output2"
+        },
+        "DeploymentName_deployToWorkspaceAnalyticsOnly": {
+            "type": "object",
+            "value": "[reference(concat('AnalyticsOnly-',parameters('deploymentNameSuffix'))).outputs.DeploymentName_deployToWorkspaceAnalyticsOnly]"
+        },
+        "DeploymentName_omsDeployStorageAnalyticsOnly" : {
+            "type" : "string",
+            "value": "[deployment().name]"
         }
     }
 }
